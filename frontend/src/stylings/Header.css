@@ -1,0 +1,14 @@
+.nav{
+	display:flex;
+	justify-content: space-around;
+	background-color: black
+}
+.nav-link{
+	text-decoration: none;
+	color:white;
+	padding:1%;
+}
+ 
+.nav-link:hover{
+	background-color: red;
+}
