@@ -1,16 +1,16 @@
 import {Fragment,Component} from 'react'
 import '../stylings/NewUser.css';
-
+import axios from 'axios';
 
 const initialState={
 	customer_name:"",
-			price:"",
-			discount:"",
-			fulls:"",
-			empties:"",
-			p_empties:"",
-			paid_amount:"",
-			pending_amount:""
+	price:"",
+	discount:"",
+	fulls:"",
+	empties:"",
+	p_empties:"",
+	paid_amount:"",
+	pending_amount:""
 }
 class NewUser extends Component{
 
@@ -26,7 +26,17 @@ class NewUser extends Component{
 	handleSubmit=(e)=>{
 		e.preventDefault();
 		console.log("username",this.state.customer_name)
-		alert("successful")
+		const newUser={
+			customer_name:this.state.customer_name,
+			price:this.state.price,
+			discount:this.state.discount,
+			fulls:this.state.fulls,
+			empties:this.state.empties,
+			p_empties:this.state.p_empties,
+			paid_amount:this.state.paid_amount,
+			pending_amount:this.state.pending_amount
+		}
+		axios.post("http://localhost:2005/create",newUser)
 		this.setState(()=>initialState)
 	}
 	render(){

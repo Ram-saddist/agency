@@ -1,9 +1,16 @@
 const mongoose=require("mongoose");
 
-const contentSchema={
-	date:String,
-	content:String
+const users_listSchema={
+	customer_name:String,
+	price:Number,
+	discount:Number,
+	fulls:Number,
+	empties:Number,
+	p_empties:Number,
+	paid_amount:Number,
+	pending_amount:Number
 }
-const Content = mongoose.model("Content",contentSchema);
 
-module.exports=Content;
+const Users = mongoose.model("Users",users_listSchema);
+
+module.exports=Users;
